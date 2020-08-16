@@ -11990,7 +11990,7 @@ a.text-dark:focus {
 
 .chats .card-body {
   overflow-y: scroll;
-  height: 80vh;
+  height: 70vh;
 }
 
 ::-webkit-scrollbar-track {
