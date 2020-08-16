@@ -13,16 +13,6 @@ class ResetPassword extends ResetPasswordNotification
     use Queueable;
 
     /**
-     * Create a new notification instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
-
-    /**
      * Get the notification's delivery channels.
      *
      * @param  mixed  $notifiable
@@ -44,7 +34,7 @@ class ResetPassword extends ResetPasswordNotification
         return (new MailMessage)
                     ->subject('بازنشانی رمز عبور')
                     ->line('شما این ایمیل را به این علت دریافت کرده‌اید که ما درخواست بازنشانی رمز عبور حساب کاربری شما را دریافت نموده‌ایم.')
-                    ->action('بازنشانی رمز عبور', url('password/reset', $this->token))
+                    ->action('بازنشانی رمز عبور', url(config('app.url').route('password.reset', $this->token, false)))
                     ->line('در صورتی که شما این درخواست را ارسال ننموده‌اید نیازی نیست کاری انجام دهید.');
     }
 
